@@ -1,0 +1,15 @@
+<mat-toolbar color="primary">
+	<h1>Ez-Ad</h1>
+	<span class="filler"></span>
+	<button
+		*ngIf="isConnected"
+		mat-button (click)="logout()"
+		routerLinkActive="routerActive"
+	>
+		<mat-icon>logout</mat-icon>
+		Logout
+	</button>
+</mat-toolbar>
+<main>
+	<router-outlet></router-outlet>
+</main>
