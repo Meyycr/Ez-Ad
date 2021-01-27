@@ -6,8 +6,7 @@ const cors = require('cors');
 const passport = require('passport');
 const userSilo = require('./silo/UserSilo');
 require('./security/passport');
-const videoSilo = require('./silo/VideoSilo');
-const plSilo = require('./silo/PlayListSilo');
+const adSilo = require('./silo/AdSilo');
 const { initDbConnection } = require('./models/dbConnection')
 
 const app = express();
@@ -27,7 +26,6 @@ app.use(passport.initialize())
 global["dbConnection"] = initDbConnection()
 
 app.use('/user', userSilo);
-app.use('/video', videoSilo);
-app.use('/playlist', plSilo);
+app.use('/ad', adSilo);
 
 module.exports = app;

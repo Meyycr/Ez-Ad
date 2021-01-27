@@ -13,8 +13,7 @@ const initDbConnection = () => {
     db.once("open", () => {
         console.log("client MongoDB Connection ok!");
     });
-    require('./PlayList')
-    require('./Video')
+    require('./Ad')
     require('./User')
     return db;
 };
@@ -23,19 +22,14 @@ const getUser = (conn) => {
     const db = conn.useDb('ez_adUser');
     return db.model('User');
 };
-const getVideo = (conn) => {
-    const db = conn.useDb('ez_adVideo');
-    return db.model('Video');
+const getAd = (conn) => {
+    const db = conn.useDb('ez_adAd');
+    return db.model('Ad');
 };
 
-const getPlayList = (conn) => {
-    const db = conn.useDb('ez_adPlayList');
-    return db.model('PlayList');
-};
 
 module.exports = {
     initDbConnection,
     getUser,
-    getVideo,
-    getPlayList
+    getAd
 };

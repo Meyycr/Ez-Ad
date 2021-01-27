@@ -1,27 +1,16 @@
 let mongoose = require('mongoose');
 
-let Video = mongoose.model('Video', {
-    videoId: {
+let Ad = mongoose.model('Ad', {
+    AdId: {
         type: String,
         required: true,
         unique: true
-    },
-    storage_url: {
-        type: String,
-    },
-    playListId : {
-        type: mongoose.ObjectId,
-        required: true
     },
     userId : {
         type: mongoose.ObjectId,
         required: true
     },
     title : {
-        type: String,
-        required: true
-    },
-    thumbnail: {
         type: String,
         required: true
     },
@@ -32,4 +21,4 @@ let Video = mongoose.model('Video', {
 
 });
 
-module.exports = Video;
+module.exports = Ad;

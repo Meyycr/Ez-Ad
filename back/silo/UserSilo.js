@@ -166,7 +166,7 @@ router.put('/updateUser/:id', (req, res) => {
     })
 })
 
-/********   deleteVideo   ***********/
+/********   deleteUser   ***********/
 
 router.get('/delete/:eml', async(req, res) => {
 
